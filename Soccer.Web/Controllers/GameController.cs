@@ -77,7 +77,6 @@ namespace Soccer.Web.Controllers
             var result = await createCommandValidator.ValidateAsync(command);
             if (!result.IsValid)
             {
-                viewModel.IsFinalScore = false;
                 result.AddToModelState(ModelState, null);
                 return View(viewModel);
             }
@@ -90,7 +89,6 @@ namespace Soccer.Web.Controllers
             }
             catch (ValidationException ex)
             {
-                viewModel.IsFinalScore = false;
                 ModelState.AddModelError(string.Empty, ex.Message);
                 return View(viewModel);
             }
@@ -157,7 +155,6 @@ namespace Soccer.Web.Controllers
             var result = await updateCommandValidator.ValidateAsync(command);
             if (!result.IsValid)
             {
-                viewModel.IsFinalScore = false;
                 result.AddToModelState(ModelState, null);
                 return View(viewModel);
             }
@@ -170,7 +167,6 @@ namespace Soccer.Web.Controllers
             }
             catch (ValidationException ex)
             {
-                viewModel.IsFinalScore = false;
                 ModelState.AddModelError(string.Empty, ex.Message);
                 return View(viewModel);
             }
