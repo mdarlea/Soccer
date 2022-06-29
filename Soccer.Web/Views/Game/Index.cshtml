@@ -1,0 +1,67 @@
+﻿@model List<Soccer.Web.ViewModels.GameSummaryViewModel>
+
+@{
+    ViewBag.Title = "Games";
+    Layout = "_Layout";
+
+    var teamColumnsCount = Model!.Max(m => m.GameTeams.Count);
+}
+
+<h2>All Games</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="mt-4">
+    <table class="table">
+        <thead>
+        <tr>
+            @for (var i = 0; i < teamColumnsCount; i++)
+            {
+                <th>
+                    Team @(i + 1)
+                </th>
+                <th>
+                    Score Team @(i + 1)
+                </th>
+            }
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+            </th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            @foreach (var game in Model!)
+            {
+                <tr>
+                    @foreach (var team in game.GameTeams)
+                    {
+                        <td>
+                            @team.TeamName
+                        </td>
+
+                        <td>
+                            @team.Score
+                        </td>
+                    }
+                    <td>
+                        @game.Date.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        @game.Time.ToString("HH:mm")
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@game.Id">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

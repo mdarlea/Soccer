@@ -1,0 +1,96 @@
+﻿@model Soccer.Web.ViewModels.GameViewModel
+
+@{
+    ViewBag.Title = "New Game";
+    Layout = "_FormLayout";
+}
+
+<h2>New Game</h2>
+
+<form asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="mb-3">
+                <label asp-for="Date" class="form-label"></label>
+                <input asp-for="Date" id="date" asp-validate class="form-control"/>
+
+                <div class="invalid-feedback">
+                    <span asp-validation-for="Date"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="mb-3">
+                <label asp-for="Time" class="form-label"></label>
+                <input asp-for="Time" asp-validate class="form-control"/>
+
+                <div class="invalid-feedback">
+                    <span asp-validation-for="Time"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Team</th>
+                    <th>Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                @for (var i = 0; i < Model!.AllTeams.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" asp-for="@Model.AllTeams[i].IsSelected" type="checkbox"/>
+                            </div>
+                        </td>
+                        <td>
+                            @Model.AllTeams[i].TeamName
+
+                            <input asp-for="@Model.AllTeams[i].TeamName" type="hidden"/>
+                            <input asp-for="@Model.AllTeams[i].TeamId" type="hidden"/>
+                        </td>
+                        <td>
+                            <input asp-for="@Model.AllTeams[i].Score" class="form-control"/>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="row mt-2 mb-2">
+        <div class="col-md-2">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="IsFinalScore">
+                <label class="form-check-label" asp-for="IsFinalScore"></label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <input type="submit" value="Create" class="btn btn-primary"/>
+    </div>
+</form>
+@section FormScripts {
+    <script type="text/javascript">
+        $(function () {
+            $('#date').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "yyyy-mm-dd",
+                language: "tr"
+            });
+        });
+    </script>
+}

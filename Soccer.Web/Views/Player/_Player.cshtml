@@ -1,0 +1,73 @@
+﻿@model Soccer.Web.ViewModels.PlayerViewModel
+
+<div class="mb-3">
+    <label asp-for="FirstName" class="form-label"></label>
+    <input asp-for="FirstName" asp-validate class="form-control" />
+                
+    <div class="invalid-feedback">
+        <span asp-validation-for="FirstName"></span>
+    </div>
+</div>
+            
+<div class="mb-3">
+    <label asp-for="LastName" class="form-label"></label>
+    <input asp-for="LastName" asp-validate class="form-control" />
+                
+    <div class="invalid-feedback">
+        <span asp-validation-for="LastName"></span>
+    </div>
+</div>
+            
+<div class="mb-3">
+    <label asp-for="TeamId" class="form-label"></label>
+    <select class="form-select" asp-for="TeamId" asp-items="ViewBag.Teams">
+    </select>
+</div>
+            
+<div class="mb-3">
+    <label asp-for="Position" class="form-label"></label>
+    <input asp-for="Position" asp-validate class="form-control" />
+                
+    <div class="invalid-feedback">
+        <span asp-validation-for="Position"></span>
+    </div>
+</div>
+            
+<fieldset>
+    <legend>Address</legend>
+    <div class="mb-3">
+        <label asp-for="StreetAddress" class="form-label"></label>
+        <input asp-for="StreetAddress" asp-validate class="form-control" />
+                
+        <div class="invalid-feedback">
+            <span asp-validation-for="StreetAddress"></span>
+        </div>
+    </div>
+                
+    <div class="mb-3">
+        <label asp-for="City" class="form-label"></label>
+        <input asp-for="City" asp-validate class="form-control" />
+                
+        <div class="invalid-feedback">
+            <span asp-validation-for="City"></span>
+        </div>
+    </div>
+                
+    <div class="mb-3">
+        <label asp-for="PostalCode" class="form-label"></label>
+        <input asp-for="PostalCode" asp-validate class="form-control" />
+                
+        <div class="invalid-feedback">
+            <span asp-validation-for="PostalCode"></span>
+        </div>
+    </div>
+                
+    <div class="mb-3">
+        <label asp-for="Country" class="form-label"></label>
+        <input asp-for="Country" asp-validate class="form-control" />
+                
+        <div class="invalid-feedback">
+            <span asp-validation-for="Country"></span>
+        </div>
+    </div>
+</fieldset>

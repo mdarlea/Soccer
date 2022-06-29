@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Soccer.Web.ViewModels.PlayerSummaryViewModel>
+@{
+    ViewBag.Title = "Players";
+    Layout = "_Layout";
+}
+
+<h2>Players</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get" class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+        <label for="SearchString" class="visually-hidden">Find by CNP:</label>
+        <input type="text" name="SearchString" id="SearchString" class="form-control" value="@ViewData["CurrentFilter"]"/>
+    </div>
+    <div class="col-12">
+        <input type="submit" value="Search" class="btn btn-primary"/> |
+    </div>
+    <div class="col-12">
+        <a asp-action="Index">Back to Full List</a>
+    </div>
+    
+</form>
+
+<div class="mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Team
+                </th>
+                <th>
+                    Position
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            @foreach (var player in Model!)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => player.FirstName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => player.LastName)
+                    </td>
+                
+                    <td>
+                        @Html.DisplayFor(modelItem => player.TeamName)
+                    </td>
+                
+                    <td>
+                        @Html.DisplayFor(modelItem => player.Position)
+                    </td>
+                
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@player.Id">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
