@@ -4,7 +4,7 @@
     ViewBag.Title = "Games";
     Layout = "_Layout";
 
-    var teamColumnsCount = Model!.Max(m => m.GameTeams.Count);
+    var teamColumnsCount = Model!.Any() ? Model!.Max(m => m.GameTeams.Count) : 0;
 }
 
 <h2>All Games</h2>

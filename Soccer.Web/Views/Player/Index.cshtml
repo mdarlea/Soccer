@@ -10,13 +10,13 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<form asp-action="Index" method="get" class="row row-cols-lg-auto g-3 align-items-center">
+<form asp-action="Index" method="get" class="row row-cols-md-auto g-3 align-items-center">
     <div class="col-12">
         <label for="SearchString" class="visually-hidden">Find by CNP:</label>
         <input type="text" name="SearchString" id="SearchString" class="form-control" value="@ViewData["CurrentFilter"]"/>
     </div>
     <div class="col-12">
-        <input type="submit" value="Search" class="btn btn-primary"/> |
+        <input type="submit" value="Search By CNP" class="btn btn-primary"/> |
     </div>
     <div class="col-12">
         <a asp-action="Index">Back to Full List</a>

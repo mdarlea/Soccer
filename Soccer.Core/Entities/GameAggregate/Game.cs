@@ -10,6 +10,7 @@ namespace Soccer.Core.Entities.GameAggregate
         public IReadOnlyCollection<GameTeam> GameTeams => gameTeams.AsReadOnly();
 
         public DateTimeOffset DateAndTime { get; set; }
+        public bool IsGameOver { get; private set; }
 
         private Game()
         {
@@ -56,6 +57,8 @@ namespace Soccer.Core.Entities.GameAggregate
 
         public void SetFinalScore()
         {
+            IsGameOver = true;
+
             var winningScore = gameTeams.Max(gt => gt.Score);
 
             foreach (var gameTeam in gameTeams)

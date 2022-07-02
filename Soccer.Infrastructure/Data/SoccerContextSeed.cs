@@ -21,7 +21,13 @@ namespace Soccer.Infrastructure.Data
 
                 if (!await soccerContext.Teams.AnyAsync())
                 {
-                    await soccerContext.Teams.AddRangeAsync(new List<Team> {new ("Dinamo"), new ("Steaua")});
+                    await soccerContext.Teams.AddRangeAsync(new List<Team>
+                    {
+                        new ("Dinamo"), 
+                        new ("Steaua"),
+                        new ("CSM"),
+                        new ("Club Atletic")
+                    });
 
                     await soccerContext.SaveChangesAsync();
                 }

@@ -20,5 +20,7 @@ namespace Soccer.Web.ViewModels
         public DateTime Time { get; set; }
 
         public List<GameTeamSummaryViewModel> GameTeams { get; set; }
+
+        public bool IsGameOver { get; set; }
     }
 }

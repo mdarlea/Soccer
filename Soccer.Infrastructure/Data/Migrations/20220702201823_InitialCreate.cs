@@ -14,7 +14,8 @@ namespace Soccer.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DateAndTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false)
+                    DateAndTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    IsGameOver = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,17 +27,11 @@ namespace Soccer.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    GameId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teams", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Teams_Games_GameId",
-                        column: x => x.GameId,
-                        principalTable: "Games",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -100,11 +95,6 @@ namespace Soccer.Infrastructure.Data.Migrations
                 name: "IX_Players_TeamId",
                 table: "Players",
                 column: "TeamId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Teams_GameId",
-                table: "Teams",
-                column: "GameId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -116,10 +106,10 @@ namespace Soccer.Infrastructure.Data.Migrations
                 name: "Players");
 
             migrationBuilder.DropTable(
-                name: "Teams");
+                name: "Games");
 
             migrationBuilder.DropTable(
-                name: "Games");
+                name: "Teams");
         }
     }
 }

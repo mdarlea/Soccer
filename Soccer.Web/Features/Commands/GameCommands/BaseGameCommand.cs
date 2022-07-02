@@ -6,10 +6,10 @@ namespace Soccer.Web.Features.Commands.GameCommands
     {
         protected BaseGameCommand()
         {
-            TeamScores = new List<TeamScoreModel>();
+            TeamScores = new List<GameTeamModel>();
         }
 
-        public List<TeamScoreModel> TeamScores { get; set; }
-        public bool IsFinalScore { get; set; }
+        public List<GameTeamModel> TeamScores { get; set; }
+        public bool IsGameOver { get; set; }
     }
 }

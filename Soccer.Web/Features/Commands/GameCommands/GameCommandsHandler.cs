@@ -1,12 +1,11 @@
-﻿using Ardalis.Specification.EntityFrameworkCore;
-using FluentValidation;
+﻿using FluentValidation;
+
 using MediatR;
-using Microsoft.EntityFrameworkCore;
+
 using Soccer.Core.Entities.GameAggregate;
 using Soccer.Core.Entities.TeamAggregate;
 using Soccer.Core.Interfaces;
 using Soccer.Core.Specifications;
-using Soccer.Infrastructure.Data;
 
 namespace Soccer.Web.Features.Commands.GameCommands
 {
@@ -41,7 +40,7 @@ namespace Soccer.Web.Features.Commands.GameCommands
                 game.AddScore(team, teamScore.Score);
             }
 
-            if (request.IsFinalScore)
+            if (request.IsGameOver)
             {
                 game.SetFinalScore();
             }
@@ -76,7 +75,7 @@ namespace Soccer.Web.Features.Commands.GameCommands
                 game.AddScore(team, teamScore.Score);
             }
 
-            if (request.IsFinalScore)
+            if (request.IsGameOver)
             {
                 game.SetFinalScore();
             }

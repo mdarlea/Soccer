@@ -12,7 +12,7 @@ using Soccer.Infrastructure.Data;
 namespace Soccer.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(SoccerContext))]
-    [Migration("20220626190749_InitialCreate")]
+    [Migration("20220702201823_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace Soccer.Infrastructure.Data.Migrations
 
                     b.Property<DateTimeOffset>("DateAndTime")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("IsGameOver")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -99,17 +102,12 @@ namespace Soccer.Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("GameId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GameId");
 
                     b.ToTable("Teams");
                 });
@@ -176,18 +174,9 @@ namespace Soccer.Infrastructure.Data.Migrations
                     b.Navigation("Team");
                 });
 
-            modelBuilder.Entity("Soccer.Core.Entities.TeamAggregate.Team", b =>
-                {
-                    b.HasOne("Soccer.Core.Entities.GameAggregate.Game", null)
-                        .WithMany("Teams")
-                        .HasForeignKey("GameId");
-                });
-
             modelBuilder.Entity("Soccer.Core.Entities.GameAggregate.Game", b =>
                 {
                     b.Navigation("GameTeams");
-
-                    b.Navigation("Teams");
                 });
 
             modelBuilder.Entity("Soccer.Core.Entities.TeamAggregate.Team", b =>

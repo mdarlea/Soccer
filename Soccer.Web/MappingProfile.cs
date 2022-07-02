@@ -35,22 +35,24 @@ namespace Soccer.Web
                     x => x.Country,
                     opt => opt.MapFrom(x => x.Address.Country));
 
+            CreateMap<GameTeam, GameTeamModel>()
+                .ForMember(x => x.TeamId,
+                    opt => opt.MapFrom(x => x.Team.Id));
+
             CreateMap<GameTeam, GameTeamSummaryViewModel>()
                 .ForMember(
                     x => x.TeamName,
                     opt => opt.MapFrom(x => x.Team.Name));
-            CreateMap<GameTeam, TeamScoreModel>()
-                .ForMember(x => x.TeamId,
-                    opt => opt.MapFrom(x => x.Team.Id));
-            
-            CreateMap<Game, GameSummaryViewModel>()
+
+            CreateMap<Game, GameModel>()
                 .ForMember(
                     x => x.Date,
                     opt => opt.MapFrom(x => x.DateAndTime.Date))
                 .ForMember(
                     x => x.Time,
                     opt => opt.MapFrom(x => x.DateAndTime.DateTime));
-            CreateMap<Game, GameModel>()
+
+            CreateMap<Game, GameSummaryViewModel>()
                 .ForMember(
                     x => x.Date,
                     opt => opt.MapFrom(x => x.DateAndTime.Date))

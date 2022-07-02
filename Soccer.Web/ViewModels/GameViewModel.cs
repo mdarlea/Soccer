@@ -23,6 +23,6 @@ namespace Soccer.Web.ViewModels
         public DateTime Time { get; set; }
 
         [Display(Name="Game is over")]
-        public bool IsFinalScore { get; set; }
+        public bool IsGameOver { get; set; }
     }
 }

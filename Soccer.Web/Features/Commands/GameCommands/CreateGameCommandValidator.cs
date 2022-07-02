@@ -14,7 +14,7 @@ namespace Soccer.Web.Features.Commands.GameCommands
         }
     }
 
-    public class TeamScoreValidator : AbstractValidator<TeamScoreModel>
+    public class TeamScoreValidator : AbstractValidator<GameTeamModel>
     {
         public TeamScoreValidator()
         {

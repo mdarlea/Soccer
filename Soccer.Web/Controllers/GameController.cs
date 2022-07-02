@@ -1,8 +1,10 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
+
 using MediatR;
+
 using Microsoft.AspNetCore.Mvc;
-using Soccer.Core.Entities.GameAggregate;
+
 using Soccer.Web.Features.Commands.GameCommands;
 using Soccer.Web.Features.Queries.GameQueries;
 using Soccer.Web.Features.Queries.TeamQueries;
@@ -42,7 +44,8 @@ namespace Soccer.Web.Controllers
                 AllTeams = teams.Select(t => new SelectTeamViewModel
                 {
                     TeamId = t.Id,
-                    TeamName = t.Name
+                    TeamName = t.Name,
+                    IsSelected = false
                 }).ToList()
             };
 
@@ -66,12 +69,12 @@ namespace Soccer.Web.Controllers
             var command = new CreateGameCommand
             {
                 DateAndTime = utcDateTime,
-                TeamScores = viewModel.AllTeams.Where(team => team.IsSelected).Select(team => new TeamScoreModel
+                TeamScores = viewModel.AllTeams.Where(team => team.IsSelected).Select(team => new GameTeamModel
                 {
                     Score = team.Score,
                     TeamId = team.TeamId,
                 }).ToList(),
-                IsFinalScore = viewModel.IsFinalScore
+                IsGameOver = viewModel.IsGameOver
             };
 
             var result = await createCommandValidator.ValidateAsync(command);
@@ -110,7 +113,7 @@ namespace Soccer.Web.Controllers
                 Id = model.Id,
                 Date = model.Date,
                 Time = model.Time,
-                IsFinalScore = model.GameTeams.Any(ts => ts.GameWon == true)
+                IsGameOver = model.IsGameOver
             };
             
             var teams = await mediator.Send(new GetAllTeamsQuery());
@@ -144,12 +147,12 @@ namespace Soccer.Web.Controllers
             var command = new UpdateGameCommand
             {
                 GameId = viewModel.Id,
-                TeamScores = viewModel.AllTeams.Select(team => new TeamScoreModel
+                TeamScores = viewModel.AllTeams.Select(team => new GameTeamModel
                 {
                     Score = team.Score,
                     TeamId = team.TeamId,
                 }).ToList(),
-                IsFinalScore = viewModel.IsFinalScore
+                IsGameOver = viewModel.IsGameOver
             };
 
             var result = await updateCommandValidator.ValidateAsync(command);
