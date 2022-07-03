@@ -5,10 +5,10 @@ using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
 
-using Soccer.Web.Features.Commands.GameCommands;
-using Soccer.Web.Features.Queries.GameQueries;
-using Soccer.Web.Features.Queries.TeamQueries;
-using Soccer.Web.Models;
+using Soccer.Web.Application.Commands.GameCommands;
+using Soccer.Web.Application.Queries.GameQueries;
+using Soccer.Web.Application.Queries.TeamQueries;
+using Soccer.Web.Application.Responses;
 using Soccer.Web.ViewModels;
 
 namespace Soccer.Web.Controllers
@@ -69,7 +69,7 @@ namespace Soccer.Web.Controllers
             var command = new CreateGameCommand
             {
                 DateAndTime = utcDateTime,
-                TeamScores = viewModel.AllTeams.Where(team => team.IsSelected).Select(team => new GameTeamModel
+                TeamScores = viewModel.AllTeams.Where(team => team.IsSelected).Select(team => new GameTeam
                 {
                     Score = team.Score,
                     TeamId = team.TeamId,
@@ -147,7 +147,7 @@ namespace Soccer.Web.Controllers
             var command = new UpdateGameCommand
             {
                 GameId = viewModel.Id,
-                TeamScores = viewModel.AllTeams.Select(team => new GameTeamModel
+                TeamScores = viewModel.AllTeams.Select(team => new GameTeam
                 {
                     Score = team.Score,
                     TeamId = team.TeamId,

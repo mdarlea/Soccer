@@ -31,6 +31,17 @@
         </div>
     </div>
 
+    @if(!Model.IsGameOver)
+    {
+        <div class="row">
+            <div class="col-md-4">
+                <hr />
+            </div>
+        </div>
+    }
+
+    <b>Set score for each participating team:</b>
+
     <div class="row">
         <div class="col-md-4">
             <table class="table">
@@ -41,7 +52,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @for (var i = 0; i < Model!.AllTeams.Count; i++)
+                @for (var i = 0; i < Model.AllTeams.Count; i++)
                 {
                     <tr>
                         <td>
@@ -51,7 +62,7 @@
                             <input asp-for="@Model.AllTeams[i].TeamId" type="hidden"/>
                         </td>
                         <td>
-                            @if (Model!.IsGameOver)
+                            @if (Model.IsGameOver)
                             {
                                 @Model.AllTeams[i].Score
                             }
@@ -65,7 +76,7 @@
                 </tbody>
             </table>
             
-            @if (Model!.IsGameOver)
+            @if (Model.IsGameOver)
             {
                 <div class="alert alert-primary mt-2 mb-2" role="alert">
                     This game is over.

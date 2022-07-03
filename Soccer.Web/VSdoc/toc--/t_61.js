@@ -1,0 +1,1 @@
+c['61']=[['62',"GameQueriesHandlers Class","topic_000000000000002D.html",1],['68',"GetAllTeamsQueryHandler Class","topic_0000000000000031.html",1],['72',"PlayerQueriesHandlers Class","topic_0000000000000034.html",1]];

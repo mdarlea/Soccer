@@ -1,8 +1,10 @@
 ﻿using FluentValidation;
+
 using MediatR;
+
 using Soccer.Core.Interfaces;
 using Soccer.Infrastructure.Data;
-using Soccer.Web.Features.Commands.PlayerCommands;
+using Soccer.Web.Application.Commands.PlayerCommands;
 
 namespace Soccer.Web.Configuration;
 

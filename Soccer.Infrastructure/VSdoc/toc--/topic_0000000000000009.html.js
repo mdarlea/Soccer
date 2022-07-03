@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"Soccer.Infrastructure Reference","topic_0000000000000024.html"],['32',"Soccer.Infrastructure.Data.Migrations Namespace","topic_0000000000000009.html"]];

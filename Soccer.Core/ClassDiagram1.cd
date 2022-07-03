@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Soccer.Core.Entities.GameAggregate.Game">
+    <Position X="5.75" Y="1.25" Width="1.75" />
+    <Members>
+      <Field Name="gameTeams" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Teams" Type="Soccer.Core.Entities.TeamAggregate.Team" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="3.438" />
+        <Point X="5.626" Y="3.438" />
+        <Point X="5.626" Y="3.43" />
+        <Point X="3.75" Y="3.43" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAgAAAAACCAAAAgAAAAAABAAAAAACAgAA=</HashCode>
+      <FileName>Entities\GameAggregate\Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="GameTeams" />
+      <Property Name="Teams" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Soccer.Core.Entities.GameAggregate.GameTeam">
+    <Position X="1.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAgAAAAAEAEAAAAAAAA=</HashCode>
+      <FileName>Entities\GameAggregate\GameTeam.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Game" />
+      <Property Name="Team" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Soccer.Core.Entities.TeamAggregate.Team">
+    <Position X="1.75" Y="2.75" Width="2" />
+    <Members>
+      <Field Name="players" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAgAAAAIAgAAAAAAAA=</HashCode>
+      <FileName>Entities\TeamAggregate\Team.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Players" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="1.023" />
+  </Class>
+  <Class Name="Soccer.Core.Entities.PlayerAggregate.Player">
+    <Position X="5.75" Y="4.25" Width="1.75" />
+    <AssociationLine Name="Team" Type="Soccer.Core.Entities.TeamAggregate.Team" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="5.665" />
+        <Point X="2.75" Y="5.665" />
+        <Point X="2.75" Y="4.627" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAgAAAAAAAAACAAAAACEAAAAAAAAAg=</HashCode>
+      <FileName>Entities\PlayerAggregate\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Team" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

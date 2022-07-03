@@ -34,7 +34,13 @@
         </div>
     </div>
     
-    <b>Select Teams:</b>
+    <div class="row">
+        <div class="col-md-4">
+            <hr/>
+        </div>
+    </div>
+
+    <b>Select participating teams:</b>
 
     <div class="row">
         <div class="col-md-4">
@@ -47,7 +53,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @for (var i = 0; i < Model!.AllTeams.Count; i++)
+                @for (var i = 0; i < Model.AllTeams.Count; i++)
                 {
                     <tr>
                         <td>

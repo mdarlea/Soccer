@@ -1,12 +1,16 @@
 ﻿using AutoMapper;
+
 using FluentValidation;
 using FluentValidation.AspNetCore;
+
 using MediatR;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Soccer.Web.Features.Commands.PlayerCommands;
-using Soccer.Web.Features.Queries.PlayerQueries;
-using Soccer.Web.Features.Queries.TeamQueries;
+
+using Soccer.Web.Application.Commands.PlayerCommands;
+using Soccer.Web.Application.Queries.PlayerQueries;
+using Soccer.Web.Application.Queries.TeamQueries;
 using Soccer.Web.ViewModels;
 
 

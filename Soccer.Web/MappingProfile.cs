@@ -1,13 +1,19 @@
 ﻿using AutoMapper;
+
 using Soccer.Core.Entities.GameAggregate;
 using Soccer.Core.Entities.PlayerAggregate;
 using Soccer.Core.Entities.TeamAggregate;
-using Soccer.Web.Features.Commands.PlayerCommands;
-using Soccer.Web.Models;
+using Soccer.Web.Application.Commands.PlayerCommands;
+using Soccer.Web.Application.Responses;
 using Soccer.Web.ViewModels;
+
+using GameTeam = Soccer.Core.Entities.GameAggregate.GameTeam;
 
 namespace Soccer.Web
 {
+    /// <summary>
+    /// Configure mappings from domain entities to DTO models and view models
+    /// </summary>
     public class MappingProfile : Profile
     {
         public MappingProfile()
@@ -35,7 +41,7 @@ namespace Soccer.Web
                     x => x.Country,
                     opt => opt.MapFrom(x => x.Address.Country));
 
-            CreateMap<GameTeam, GameTeamModel>()
+            CreateMap<GameTeam, Application.Responses.GameTeam>()
                 .ForMember(x => x.TeamId,
                     opt => opt.MapFrom(x => x.Team.Id));
 
@@ -44,7 +50,7 @@ namespace Soccer.Web
                     x => x.TeamName,
                     opt => opt.MapFrom(x => x.Team.Name));
 
-            CreateMap<Game, GameModel>()
+            CreateMap<Game, GameResponse>()
                 .ForMember(
                     x => x.Date,
                     opt => opt.MapFrom(x => x.DateAndTime.Date))

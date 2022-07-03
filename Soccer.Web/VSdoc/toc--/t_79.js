@@ -1,0 +1,1 @@
+c['79']=[['80',"GetAllGamesQuery Class","topic_000000000000003A.html",0],['81',"GetGameByIdQuery Class","topic_000000000000003B.html",1]];

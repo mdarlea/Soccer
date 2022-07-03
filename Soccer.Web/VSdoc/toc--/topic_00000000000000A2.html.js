@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"Soccer.Web Reference","topic_00000000000000A3.html"],['4',"Soccer.Web Namespace","topic_00000000000000A0.html"],['5',"MappingProfile Class","topic_00000000000000A1.html"],['6',"MappingProfile Constructor","topic_00000000000000A2.html"]];
