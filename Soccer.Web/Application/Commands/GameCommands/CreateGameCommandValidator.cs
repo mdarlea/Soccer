@@ -20,8 +20,8 @@ namespace Soccer.Web.Application.Commands.GameCommands
     {
         public CreateGameCommandValidator()
         {
-            RuleFor(x => x.TeamScores.Count).GreaterThanOrEqualTo(2).WithMessage("Game must have at least two teams");
-            RuleForEach(x => x.TeamScores)
+            RuleFor(x => x.Scores.Count).GreaterThanOrEqualTo(2).WithMessage("Game must have at least two teams");
+            RuleForEach(x => x.Scores)
                 .NotEmpty()
                 .SetValidator(new TeamScoreValidator());
         }

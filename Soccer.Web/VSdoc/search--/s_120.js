@@ -1,1 +1,0 @@
-search_result['120']=["topic_000000000000002C.html","Soccer.Web.Application.Handlers.QueryHandlers Namespace",""];

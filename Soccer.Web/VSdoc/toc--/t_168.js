@@ -1,1 +1,0 @@
-c['168']=[['169',"Date Property","topic_0000000000000080.html",0],['170',"GameTeams Property","topic_0000000000000082.html",0],['171',"Id Property","topic_000000000000007F.html",0],['172',"IsGameOver Property","topic_0000000000000083.html",0],['173',"Time Property","topic_0000000000000081.html",0]];

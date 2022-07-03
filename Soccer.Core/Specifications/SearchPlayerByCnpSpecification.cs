@@ -4,7 +4,7 @@ using Soccer.Core.Entities.PlayerAggregate;
 namespace Soccer.Core.Specifications
 {
     /// <summary>
-    /// Specification to search a player by his/her CNP
+    /// Specification to search a player by CNP without the ability to change the player
     /// </summary>
     public sealed class SearchPlayerByCnpSpecification : SingleResultSpecification<Player>
     {

@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Soccer.Web.TagHelpers
 {
+    /// <summary>
+    /// Server side validation. 
+    /// Adds the 'is-valid' attribute to the input control if it passes validation
+    /// Adds the 'is-invalid' attribute to the input control if it does not pass validation
+    /// </summary>
     [HtmlTargetElement("input", Attributes = "asp-validate, asp-for")]
     public class InputWithValidationTagHelper : TagHelper
     {

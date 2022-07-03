@@ -1,1 +1,0 @@
-search_result['10']=["topic_0000000000000003.html","BaseGameCommand.TeamScores Property","For each team gets the score in this game"];

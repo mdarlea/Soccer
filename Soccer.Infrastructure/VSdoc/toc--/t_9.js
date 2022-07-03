@@ -1,1 +1,0 @@
-c['9']=[['10',"GameTeams Property","topic_0000000000000014.html",0],['11',"Games Property","topic_0000000000000013.html",0],['12',"Players Property","topic_0000000000000015.html",0],['13',"Teams Property","topic_0000000000000016.html",0]];

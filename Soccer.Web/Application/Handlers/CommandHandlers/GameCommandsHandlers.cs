@@ -37,7 +37,7 @@ namespace Soccer.Web.Application.Handlers.CommandHandlers
         {
             var game = new Game(request.DateAndTime);
 
-            foreach (var teamScore in request.TeamScores)
+            foreach (var teamScore in request.Scores)
             {
                 var team = await teamRepository.GetByIdAsync(teamScore.TeamId, cancellationToken);
 
@@ -72,7 +72,7 @@ namespace Soccer.Web.Application.Handlers.CommandHandlers
                 throw new ValidationException($"Cannot find game for Id={request.GameId}");
             }
 
-            foreach (var teamScore in request.TeamScores)
+            foreach (var teamScore in request.Scores)
             {
                 var team = game.Teams.SingleOrDefault(t => t.Id == teamScore.TeamId);
 

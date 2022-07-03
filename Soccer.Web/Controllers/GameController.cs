@@ -69,7 +69,7 @@ namespace Soccer.Web.Controllers
             var command = new CreateGameCommand
             {
                 DateAndTime = utcDateTime,
-                TeamScores = viewModel.AllTeams.Where(team => team.IsSelected).Select(team => new GameTeam
+                Scores = viewModel.AllTeams.Where(team => team.IsSelected).Select(team => new GameTeam
                 {
                     Score = team.Score,
                     TeamId = team.TeamId,
@@ -147,7 +147,7 @@ namespace Soccer.Web.Controllers
             var command = new UpdateGameCommand
             {
                 GameId = viewModel.Id,
-                TeamScores = viewModel.AllTeams.Select(team => new GameTeam
+                Scores = viewModel.AllTeams.Select(team => new GameTeam
                 {
                     Score = team.Score,
                     TeamId = team.TeamId,

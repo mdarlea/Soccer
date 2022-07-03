@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"Soccer.Infrastructure Reference","topic_0000000000000024.html"],['44',"Soccer.Infrastructure.Identity.Migrations Namespace","topic_000000000000001A.html"],['45',"InitialCreate Class","topic_000000000000001B.html"],['46',"Methods","topic_000000000000001B_methods--.html"],['48',"Down Method","topic_000000000000001D.html"]];

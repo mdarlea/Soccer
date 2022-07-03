@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"Soccer.Web Reference","topic_00000000000000A3.html"],['92',"Soccer.Web.Application.Queries.TeamQueries Namespace","topic_0000000000000043.html"],['93',"GetAllTeamsQuery Class","topic_0000000000000044.html"]];

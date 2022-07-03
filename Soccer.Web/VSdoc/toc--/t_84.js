@@ -1,1 +1,0 @@
-c['84']=[['85',"GetAllPlayersQuery Class","topic_000000000000003E.html",0],['86',"GetPlayerByIdQuery Class","topic_000000000000003F.html",1],['89',"SearchPlayerByCnpQuery Class","topic_0000000000000041.html",1]];

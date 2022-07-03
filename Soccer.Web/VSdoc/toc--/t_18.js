@@ -1,1 +1,0 @@
-c['18']=[['19',"TeamScoreValidator Constructor","topic_000000000000000A.html",0]];

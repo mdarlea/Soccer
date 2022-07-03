@@ -1,1 +1,0 @@
-c['95']=[['96',"GameResponse Constructor","topic_0000000000000047.html",0],['97',"Properties","topic_0000000000000046_props--.html",1]];

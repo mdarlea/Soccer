@@ -1,1 +1,0 @@
-c['75']=[['76',"Handle(GetAllPlayersQuery, CancellationToken) Method","topic_0000000000000037.html",0],['77',"Handle(SearchPlayerByCnpQuery, CancellationToken) Method","topic_0000000000000038.html",0],['78',"Handle(GetPlayerByIdQuery, CancellationToken) Method","topic_0000000000000036.html",0]];

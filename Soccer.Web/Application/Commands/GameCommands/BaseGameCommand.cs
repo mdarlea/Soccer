@@ -9,13 +9,13 @@ namespace Soccer.Web.Application.Commands.GameCommands
     {
         protected BaseGameCommand()
         {
-            TeamScores = new List<GameTeam>();
+            Scores = new List<GameTeam>();
         }
 
         /// <summary>
         /// For each team gets the score in the given game
         /// </summary>
-        public List<GameTeam> TeamScores { get; set; }
+        public List<GameTeam> Scores { get; set; }
 
         /// <summary>
         /// Specify if game is over

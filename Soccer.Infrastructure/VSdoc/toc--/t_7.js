@@ -1,1 +1,0 @@
-c['7']=[['8',"SoccerContext Constructor","topic_0000000000000012.html",0],['9',"Properties","topic_0000000000000011_props--.html",1],['14',"Methods","topic_0000000000000011_methods--.html",1]];

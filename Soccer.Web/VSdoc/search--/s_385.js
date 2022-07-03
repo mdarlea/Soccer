@@ -1,1 +1,0 @@
-search_result['385']=["topic_00000000000000A1.html","MappingProfile Class","Configure mappings from domain entities to DTO models and view models"];

@@ -1,1 +1,0 @@
-search_result['11']=["topic_0000000000000004.html","BaseGameCommand.IsGameOver Property","Specify if game is over"];

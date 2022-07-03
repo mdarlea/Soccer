@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"Soccer.Infrastructure Reference","topic_0000000000000024.html"],['4',"Soccer.Infrastructure.Data Namespace","topic_000000000000000E.html"],['16',"SoccerContextSeed Class","topic_0000000000000018.html"],['17',"Methods","topic_0000000000000018_methods--.html"],['18',"SeedAsync Method","topic_0000000000000019.html"]];

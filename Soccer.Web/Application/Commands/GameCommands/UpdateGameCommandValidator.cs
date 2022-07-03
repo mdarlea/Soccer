@@ -20,7 +20,7 @@ namespace Soccer.Web.Application.Commands.GameCommands
         {
             RuleFor(x => x.GameId).NotEmpty();
 
-            RuleForEach(x => x.TeamScores)
+            RuleForEach(x => x.Scores)
                 .NotEmpty()
                 .SetValidator(new TeamScoreValidator());
 
